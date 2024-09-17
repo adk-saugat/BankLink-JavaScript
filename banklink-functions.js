@@ -7,3 +7,12 @@ const getStoredUsers = function () {
         return []
     }
 }
+
+const addUser = function (username, password) {
+    users.push({
+        username: username,
+        password: password
+    })
+    localStorage.setItem('users', JSON.stringify(users))
+
+}

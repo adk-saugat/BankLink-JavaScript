@@ -6,19 +6,29 @@ document.querySelector('#signupWrapper').addEventListener('submit', function (e)
     username = e.target.elements.signupUsernameField.value
     password = e.target.elements.signupPasswordField.value
 
-    const findUsername = users.find(function (user) {
-        return username === user.username
-    })
+    // Check if the username already exists
+    const existingUser = users.find(function (user) {
+        return user.username === username && user.password === password;
+    });
 
-    const findPassword = users.find(function (user) {
-        return password === user.password
-    })
+    if (existingUser) {
+        console.log('You already have an account. No need to sign up again.');
 
-    if (findUsername === username && findPassword === password) {
-        console.log('You dont have to signup')
+        const returnWrapper = document.createElement('div')
+        const loginReturn = document.createElement('span')
+        const loginLink = document.createElement('a')
+
+        loginReturn.textContent = 'You already have an account.'
+        loginLink.textContent = 'Go to Login.'
+        loginLink.setAttribute('href', '/login-page.html')
+
+        returnWrapper.appendChild(loginReturn)
+        returnWrapper.appendChild(loginLink)
+
+        document.querySelector('#loginReturn').appendChild(returnWrapper)
     } else {
-        addUser(username, password)
-        console.log('Signed up')
+        addUser(username, password);
+        console.log('Signed up successfully.');
     }
 })
 

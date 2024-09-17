@@ -2,7 +2,7 @@ const getStoredUsers = function () {
     const usersJSON = localStorage.getItem('users')
 
     if (usersJSON !== null) {
-        return JSON.stringify(usersJSON)
+        return JSON.parse(usersJSON)
     } else {
         return []
     }

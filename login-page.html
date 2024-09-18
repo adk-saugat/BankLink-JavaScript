@@ -10,15 +10,16 @@
         <h1>Bank link</h1>
     </div>
     <h2>LogIn</h2>
-    <form id="logiContainer">
+    <form id="loginContainer">
         <label for="usernameField">Username</label><br/>
-        <input type="username" id = "usernameField" placeholder="username" required><br/>
+        <input type="username" id = "loginUsernameField" placeholder="username" required><br/>
         <label for="passwordField">Password</label><br/>
-        <input type="password" id = "passwordField" placeholder="password" required><br/>
+        <input type="password" id = "loginPasswordField" placeholder="password" required><br/>
         <button id="loginBtn">LogIn</button>
         <a href="/signup-page.html">Sign up</a>
     </form>
+    <div id="failedWrapper"></div>
     <script src="banklink-functions.js"></script>
     <script src="banklink-login.js"></script>
-</body>
+</body>  
 </html>

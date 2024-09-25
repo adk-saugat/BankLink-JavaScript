@@ -20,7 +20,7 @@ document.querySelector('#signupWrapper').addEventListener('submit', function (e)
         document.querySelector('#loginReturn').appendChild(returnWrapper)
     } else {
         addUser(username, password);
-        console.log('Signed up successfully.');
+        console.log('Signed up successfully.')
         location.assign('/login-page.html')
     }
 })

@@ -9,7 +9,9 @@ const getStoredUsers = function () {
 }
 
 const addUser = function (username, password) {
+    let userID = crypto.randomUUID()
     users.push({
+        userID: userID,
         username: username,
         password: password,
         balance: 0

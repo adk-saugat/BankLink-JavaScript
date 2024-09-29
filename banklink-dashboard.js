@@ -1,3 +1,2 @@
-const users = getStoredUsers()
-const accountBalance = document.querySelector('#accountBalance')
+console.log(location.hash)
 

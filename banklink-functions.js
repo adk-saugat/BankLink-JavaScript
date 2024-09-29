@@ -14,15 +14,16 @@ const addUser = function (username, password) {
         userID: userID,
         username: username,
         password: password,
-        balance: 0
+        balance: 0,
     })
     localStorage.setItem('users', JSON.stringify(users))
 
 }
 
-const findUser = function () {
-    const existingUser = users.find(function (user) {
-        return user.username === username && user.password === password;
-    })
-    return existingUser
+const findUser = function (username, password) {
+    return users.find((user) => user.username === username && user.password === password)
+}
+
+const getUserID = (existingUser) => {
+    return users.find((user) => user.username === existingUser.username) ? existingUser.userID : ''
 }
